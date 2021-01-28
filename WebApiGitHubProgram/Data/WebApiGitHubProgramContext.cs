@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using WebApiGitHubProgram.Data;
 
 namespace WebApiGitHubProgram.Data
 {
@@ -14,5 +15,7 @@ namespace WebApiGitHubProgram.Data
         }
 
         public DbSet<WebApiGitHubProgram.Data.MyTable> MyTables { get; set; }
+
+        public DbSet<WebApiGitHubProgram.Data.GitTable> GitTable { get; set; }
     }
 }
