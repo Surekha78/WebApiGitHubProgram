@@ -40,6 +40,13 @@ namespace WebApiGitHubProgram
             {
                 app.UseDeveloperExceptionPage();
             }
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<WebApiGitHubProgramContext>();
+                 context.Database.Migrate();
+               // context.Database.EnsureDeleted(); 
+                // context.Database.EnsureCreated();
+            }
 
             app.UseHttpsRedirection();
 
