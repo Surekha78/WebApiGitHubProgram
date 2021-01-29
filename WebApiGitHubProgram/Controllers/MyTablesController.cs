@@ -80,7 +80,16 @@ namespace WebApiGitHubProgram.Controllers
         public async Task<ActionResult<MyTable>> PostMyTable(MyTable myTable)
         {
             _context.MyTables.Add(myTable);
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.SaveChangesAsync();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
 
             return CreatedAtAction("GetMyTable", new { id = myTable.Id }, myTable);
         }
