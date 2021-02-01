@@ -13,7 +13,8 @@ namespace WebApiGitHubProgram.Controllers
     [ApiController]
     public class AsyncAwaitController : ControllerBase
     {
-        /*private readonly WebApiGitHubProgramContext _context;
+        /*Test Purpose
+         * private readonly WebApiGitHubProgramContext _context;
 
         public AsyncAwaitController(WebApiGitHubProgramContext context)
         {
