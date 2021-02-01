@@ -1,0 +1,5 @@
+﻿List of HttpStatus Codes
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
+Data annotations
+https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations?view=net-5.0

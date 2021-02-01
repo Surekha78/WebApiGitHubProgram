@@ -1,0 +1,7 @@
+﻿ClassName ObjName = new ClassName();
+ClassName ObjName = new ClassName(ParametersForYourConstructor);
+
+var a = new {id = 10, name = "Ramesh", Age = "100"} // c++/c# type of creation
+
+JSON Object
+{id: 10, name: "Ramesh", Age: "100"} // js type of creation
