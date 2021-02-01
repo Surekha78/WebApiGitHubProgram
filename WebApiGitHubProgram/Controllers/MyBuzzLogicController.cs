@@ -8,7 +8,7 @@ using WebApiGitHubProgram.Data;
 
 namespace WebApiGitHubProgram.Controllers
 {
-     //[Route("api2")]
+    //[Route("api2")]
     // [Route("api1/[action]")]
     [Route("api/[controller]/[action]")]
     // api/MyBuzzLogic/Add1
@@ -48,6 +48,35 @@ namespace WebApiGitHubProgram.Controllers
         {
             return class1.a;
         }
+
+        [Route("NewRoute")]
+        [HttpGet]
+        public IActionResult AnnonyObject()
+        {
+            // var a = new { id = 10, name = "Ramesh", Age = "100" };
+
+            var a = GetAnnonyObject(10, "Ramesh", 100);
+
+            int Salary = a.Salary;
+
+            // return Ok();
+            return Ok(a);
+            // return Ok(new { id = 10, name = "Ramesh", Age = "100" });
+        }
+
+        /*<AccessModier> <returnableDatatype> <MethodName>(InputParameerType ObjName)
+        {
+            return <returnableDatatype>;
+        }*/
+
+        private dynamic GetAnnonyObject(int Id, string Name, int Salary)
+        {
+            var a = new { id = Id, name = Name, Salary = Salary + 1000 };
+            int Salary1 = a.Salary;
+            return a;
+        }
+
+
         /*
         [HttpDelete]
         public async Task<int> RemoveAllRecords()
