@@ -47,7 +47,7 @@ namespace WebApiGitHubProgram.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutBalutable(int id, Balutable balutable)
         {
-            if (id != balutable.StdId)
+            if (id != balutable.EmpId)
             {
                 return BadRequest();
             }
@@ -82,7 +82,7 @@ namespace WebApiGitHubProgram.Controllers
             _context.Balutable.Add(balutable);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetBalutable", new { id = balutable.StdId }, balutable);
+            return CreatedAtAction("GetBalutable", new { id = balutable.EmpId }, balutable);
         }
 
         // DELETE: api/Balutables/5
@@ -103,7 +103,7 @@ namespace WebApiGitHubProgram.Controllers
 
         private bool BalutableExists(int id)
         {
-            return _context.Balutable.Any(e => e.StdId == id);
+            return _context.Balutable.Any(e => e.EmpId == id);
         }
     }
 }

@@ -21,26 +21,32 @@ namespace WebApiGitHubProgram.Migrations
 
             modelBuilder.Entity("WebApiGitHubProgram.Data.Balutable", b =>
                 {
-                    b.Property<int>("StdId")
+                    b.Property<int>("EmpId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("DOB")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("Fee")
-                        .HasColumnType("float");
+                    b.Property<string>("Designation")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("JoiningDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("StdName")
+                    b.Property<string>("EmpName")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.HasKey("StdId");
+                    b.Property<DateTime?>("JoiningDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("Salary")
+                        .HasColumnType("float");
+
+                    b.HasKey("EmpId");
 
                     b.ToTable("Balutable");
                 });

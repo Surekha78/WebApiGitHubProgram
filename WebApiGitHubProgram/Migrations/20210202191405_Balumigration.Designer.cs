@@ -10,8 +10,8 @@ using WebApiGitHubProgram.Data;
 namespace WebApiGitHubProgram.Migrations
 {
     [DbContext(typeof(WebApiGitHubProgramContext))]
-    [Migration("20210128054604_JoiningDateisAdded")]
-    partial class JoiningDateisAdded
+    [Migration("20210202191405_Balumigration")]
+    partial class Balumigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,38 @@ namespace WebApiGitHubProgram.Migrations
                 .HasAnnotation("ProductVersion", "3.1.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("WebApiGitHubProgram.Data.Balutable", b =>
+                {
+                    b.Property<int>("EmpId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DOB")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Designation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EmpName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime?>("JoiningDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("Salary")
+                        .HasColumnType("float");
+
+                    b.HasKey("EmpId");
+
+                    b.ToTable("Balutable");
+                });
 
             modelBuilder.Entity("WebApiGitHubProgram.Data.MyTable", b =>
                 {

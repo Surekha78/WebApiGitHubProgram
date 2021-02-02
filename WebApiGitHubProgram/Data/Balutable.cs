@@ -11,12 +11,15 @@ namespace WebApiGitHubProgram.Data
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int StdId { get; set; }
+        public int EmpId { get; set; }
         
         [Required, StringLength(50), MinLength(3)]
-        public string StdName { get; set; }
-        public double Fee { get; set; }
+        public string EmpName { get; set; }
+        public string Designation { get; set; }
+        public double Salary { get; set; }
         public DateTime? DOB { get; set; } 
         public DateTime? JoiningDate { get; set; }
+        public String Address { get; set; }
+
     }
 }
