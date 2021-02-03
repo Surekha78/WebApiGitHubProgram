@@ -18,6 +18,9 @@ namespace WebApiGitHubProgram.Data
 
         public DbSet<WebApiGitHubProgram.Data.Customer> Customer { get; set; }
 
-       
+        public DbSet<Job> job { get; set; }
+        public DbSet<Employee1> GetEmployee1s { get; set; }
+
+
     }
 }
