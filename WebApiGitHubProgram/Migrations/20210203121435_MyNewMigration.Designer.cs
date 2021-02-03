@@ -10,8 +10,8 @@ using WebApiGitHubProgram.Data;
 namespace WebApiGitHubProgram.Migrations
 {
     [DbContext(typeof(WebApiGitHubProgramContext))]
-    [Migration("20210127134938_MyMigration")]
-    partial class MyMigration
+    [Migration("20210203121435_MyNewMigration")]
+    partial class MyNewMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,29 @@ namespace WebApiGitHubProgram.Migrations
                 .HasAnnotation("ProductVersion", "3.1.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("WebApiGitHubProgram.Data.Customer", b =>
+                {
+                    b.Property<int>("CustId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CustName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime?>("DOB")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CustId");
+
+                    b.ToTable("Customer");
+                });
 
             modelBuilder.Entity("WebApiGitHubProgram.Data.MyTable", b =>
                 {
@@ -42,29 +65,6 @@ namespace WebApiGitHubProgram.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MyTables");
-                });
-
-            modelBuilder.Entity("WebApiGitHubProgram.Data.PoojaTable", b =>
-                {
-                    b.Property<int>("CustId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CustName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<DateTime?>("DOB")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Location")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("CustId");
-
-                    b.ToTable("PoojaTable");
                 });
 #pragma warning restore 612, 618
         }

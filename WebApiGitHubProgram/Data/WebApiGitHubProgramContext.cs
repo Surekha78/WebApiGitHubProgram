@@ -16,6 +16,8 @@ namespace WebApiGitHubProgram.Data
 
         public DbSet<WebApiGitHubProgram.Data.MyTable> MyTables { get; set; }
 
-        public DbSet<WebApiGitHubProgram.Data.PoojaTable> PoojaTable { get; set; }
+        public DbSet<WebApiGitHubProgram.Data.Customer> Customer { get; set; }
+
+       
     }
 }

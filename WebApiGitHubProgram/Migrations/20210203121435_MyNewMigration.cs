@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebApiGitHubProgram.Migrations
 {
-    public partial class MyMigration : Migration
+    public partial class MyNewMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "PoojaTable",
+                name: "Customer",
                 columns: table => new
                 {
                     CustId = table.Column<int>(nullable: false)
@@ -19,14 +19,14 @@ namespace WebApiGitHubProgram.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PoojaTable", x => x.CustId);
+                    table.PrimaryKey("PK_Customer", x => x.CustId);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "PoojaTable");
+                name: "Customer");
         }
     }
 }

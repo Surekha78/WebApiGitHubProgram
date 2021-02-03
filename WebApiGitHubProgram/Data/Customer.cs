@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace WebApiGitHubProgram.Data
 {
-    public class PoojaTable
+    public class Customer
     {
-
-
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]// Database will generate number by db
                                                              // [DatabaseGenerated(DatabaseGeneratedOption.None)] //Database will not generate

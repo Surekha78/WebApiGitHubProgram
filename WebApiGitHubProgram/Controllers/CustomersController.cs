@@ -11,48 +11,48 @@ namespace WebApiGitHubProgram.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PoojaTablesController : ControllerBase
+    public class CustomersController : ControllerBase
     {
         private readonly WebApiGitHubProgramContext _context;
 
-        public PoojaTablesController(WebApiGitHubProgramContext context)
+        public CustomersController(WebApiGitHubProgramContext context)
         {
             _context = context;
         }
 
-        // GET: api/PoojaTables
+        // GET: api/Customers
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<PoojaTable>>> GetPoojaTable()
+        public async Task<ActionResult<IEnumerable<Customer>>> GetCustomer()
         {
-            return await _context.PoojaTable.ToListAsync();
+            return await _context.Customer.ToListAsync();
         }
 
-        // GET: api/PoojaTables/5
+        // GET: api/Customers/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<PoojaTable>> GetPoojaTable(int id)
+        public async Task<ActionResult<Customer>> GetCustomer(int id)
         {
-            var poojaTable = await _context.PoojaTable.FindAsync(id);
+            var customer = await _context.Customer.FindAsync(id);
 
-            if (poojaTable == null)
+            if (customer == null)
             {
                 return NotFound();
             }
 
-            return poojaTable;
+            return customer;
         }
 
-        // PUT: api/PoojaTables/5
+        // PUT: api/Customers/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPoojaTable(int id, PoojaTable poojaTable)
+        public async Task<IActionResult> PutCustomer(int id, Customer customer)
         {
-            if (id != poojaTable.CustId)
+            if (id != customer.CustId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(poojaTable).State = EntityState.Modified;
+            _context.Entry(customer).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace WebApiGitHubProgram.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PoojaTableExists(id))
+                if (!CustomerExists(id))
                 {
                     return NotFound();
                 }
@@ -73,37 +73,37 @@ namespace WebApiGitHubProgram.Controllers
             return NoContent();
         }
 
-        // POST: api/PoojaTables
+        // POST: api/Customers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<PoojaTable>> PostPoojaTable(PoojaTable poojaTable)
+        public async Task<ActionResult<Customer>> PostCustomer(Customer customer)
         {
-            _context.PoojaTable.Add(poojaTable);
+            _context.Customer.Add(customer);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPoojaTable", new { id = poojaTable.CustId }, poojaTable);
+            return CreatedAtAction("GetCustomer", new { id = customer.CustId }, customer);
         }
 
-        // DELETE: api/PoojaTables/5
+        // DELETE: api/Customers/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<PoojaTable>> DeletePoojaTable(int id)
+        public async Task<ActionResult<Customer>> DeleteCustomer(int id)
         {
-            var poojaTable = await _context.PoojaTable.FindAsync(id);
-            if (poojaTable == null)
+            var customer = await _context.Customer.FindAsync(id);
+            if (customer == null)
             {
                 return NotFound();
             }
 
-            _context.PoojaTable.Remove(poojaTable);
+            _context.Customer.Remove(customer);
             await _context.SaveChangesAsync();
 
-            return poojaTable;
+            return customer;
         }
 
-        private bool PoojaTableExists(int id)
+        private bool CustomerExists(int id)
         {
-            return _context.PoojaTable.Any(e => e.CustId == id);
+            return _context.Customer.Any(e => e.CustId == id);
         }
     }
 }
