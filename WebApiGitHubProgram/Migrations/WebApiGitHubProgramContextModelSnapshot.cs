@@ -19,9 +19,9 @@ namespace WebApiGitHubProgram.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("WebApiGitHubProgram.Data.Balutable", b =>
+            modelBuilder.Entity("WebApiGitHubProgram.Data.MyData", b =>
                 {
-                    b.Property<int>("StdId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -29,20 +29,20 @@ namespace WebApiGitHubProgram.Migrations
                     b.Property<DateTime?>("DOB")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("Fee")
-                        .HasColumnType("float");
-
-                    b.Property<DateTime?>("JoiningDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("StdName")
+                    b.Property<string>("DataName")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.HasKey("StdId");
+                    b.Property<DateTime?>("JoiningDate")
+                        .HasColumnType("datetime2");
 
-                    b.ToTable("Balutable");
+                    b.Property<double>("Sal")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MyData");
                 });
 
             modelBuilder.Entity("WebApiGitHubProgram.Data.MyTable", b =>

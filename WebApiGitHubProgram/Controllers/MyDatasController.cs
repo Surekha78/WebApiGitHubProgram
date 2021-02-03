@@ -11,48 +11,48 @@ namespace WebApiGitHubProgram.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BalutablesController : ControllerBase
+    public class MyDatasController : ControllerBase
     {
         private readonly WebApiGitHubProgramContext _context;
 
-        public BalutablesController(WebApiGitHubProgramContext context)
+        public MyDatasController(WebApiGitHubProgramContext context)
         {
             _context = context;
         }
 
-        // GET: api/Balutables
+        // GET: api/MyDatas
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Balutable>>> GetBalutable()
+        public async Task<ActionResult<IEnumerable<MyData>>> GetMyData()
         {
-            return await _context.Balutable.ToListAsync();
+            return await _context.MyData.ToListAsync();
         }
 
-        // GET: api/Balutables/5
+        // GET: api/MyDatas/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Balutable>> GetBalutable(int id)
+        public async Task<ActionResult<MyData>> GetMyData(int id)
         {
-            var balutable = await _context.Balutable.FindAsync(id);
+            var myData = await _context.MyData.FindAsync(id);
 
-            if (balutable == null)
+            if (myData == null)
             {
                 return NotFound();
             }
 
-            return balutable;
+            return myData;
         }
 
-        // PUT: api/Balutables/5
+        // PUT: api/MyDatas/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBalutable(int id, Balutable balutable)
+        public async Task<IActionResult> PutMyData(int id, MyData myData)
         {
-            if (id != balutable.StdId)
+            if (id != myData.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(balutable).State = EntityState.Modified;
+            _context.Entry(myData).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace WebApiGitHubProgram.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!BalutableExists(id))
+                if (!MyDataExists(id))
                 {
                     return NotFound();
                 }
@@ -73,37 +73,37 @@ namespace WebApiGitHubProgram.Controllers
             return NoContent();
         }
 
-        // POST: api/Balutables
+        // POST: api/MyDatas
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Balutable>> PostBalutable(Balutable balutable)
+        public async Task<ActionResult<MyData>> PostMyData(MyData myData)
         {
-            _context.Balutable.Add(balutable);
+            _context.MyData.Add(myData);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetBalutable", new { id = balutable.StdId }, balutable);
+            return CreatedAtAction("GetMyData", new { id = myData.Id }, myData);
         }
 
-        // DELETE: api/Balutables/5
+        // DELETE: api/MyDatas/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Balutable>> DeleteBalutable(int id)
+        public async Task<ActionResult<MyData>> DeleteMyData(int id)
         {
-            var balutable = await _context.Balutable.FindAsync(id);
-            if (balutable == null)
+            var myData = await _context.MyData.FindAsync(id);
+            if (myData == null)
             {
                 return NotFound();
             }
 
-            _context.Balutable.Remove(balutable);
+            _context.MyData.Remove(myData);
             await _context.SaveChangesAsync();
 
-            return balutable;
+            return myData;
         }
 
-        private bool BalutableExists(int id)
+        private bool MyDataExists(int id)
         {
-            return _context.Balutable.Any(e => e.StdId == id);
+            return _context.MyData.Any(e => e.Id == id);
         }
     }
 }
