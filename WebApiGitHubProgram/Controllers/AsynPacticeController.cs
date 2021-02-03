@@ -17,13 +17,12 @@ namespace WebApiGitHubProgram.Controllers
             Console.WriteLine("Printing Task1 Value {0}", DateTime.UtcNow.ToString());
             Task2();
             await Task.CompletedTask;
-            
-           
         }
         public async Task Task2()
         {
             await Task.Delay(10000);
             Console.WriteLine("Printing Task2 Value{0}", DateTime.UtcNow.ToString());
         }
-    }   
-}
+    }
+
+    }

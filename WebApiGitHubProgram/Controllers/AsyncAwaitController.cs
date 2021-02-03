@@ -51,6 +51,7 @@ namespace WebApiGitHubProgram.Controllers
             // Thread.Sleep(10000);
             await Task.Delay(10000);
             Console.WriteLine("I am running from within the Method3 {0}", DateTime.Now.ToString());
+
             //return 10;
         }
 
