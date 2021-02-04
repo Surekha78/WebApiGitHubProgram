@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WebApiGitHubProgram.Data;
+using WebApiGitHubProgram.Extension;
 
 namespace WebApiGitHubProgram.Data
 {
@@ -14,6 +15,11 @@ namespace WebApiGitHubProgram.Data
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.SeedMyDB();
+        }
         public DbSet<WebApiGitHubProgram.Data.MyTable> MyTables { get; set; }
 
         public DbSet<WebApiGitHubProgram.Data.Customer> Customer { get; set; }
