@@ -10,8 +10,8 @@ using WebApiGitHubProgram.Data;
 namespace WebApiGitHubProgram.Migrations
 {
     [DbContext(typeof(WebApiGitHubProgramContext))]
-    [Migration("20210128054604_JoiningDateisAdded")]
-    partial class JoiningDateisAdded
+    [Migration("20210204045430_PracticeMigration")]
+    partial class PracticeMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,32 @@ namespace WebApiGitHubProgram.Migrations
                 .HasAnnotation("ProductVersion", "3.1.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("WebApiGitHubProgram.Data.Balutable", b =>
+                {
+                    b.Property<int>("StdId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("DOB")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("Fee")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime?>("JoiningDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("StdName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.HasKey("StdId");
+
+                    b.ToTable("Balutable");
+                });
 
             modelBuilder.Entity("WebApiGitHubProgram.Data.MyTable", b =>
                 {
