@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+
 using WebApiGitHubProgram.Exts;
+
+using WebApiGitHubProgram.Data;
+
 
 namespace WebApiGitHubProgram.Data
 {
@@ -14,6 +18,7 @@ namespace WebApiGitHubProgram.Data
         {
         }
 
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -23,5 +28,10 @@ namespace WebApiGitHubProgram.Data
         public DbSet<MyTable> MyTables { get; set; }
         public DbSet<Title> Titles { get; set; }
         public DbSet<Student> Students { get; set; }
+
+        public DbSet<WebApiGitHubProgram.Data.MyTable> MyTables { get; set; }
+        public object Balutable { get; internal set; }
+        public DbSet<WebApiGitHubProgram.Data.MyData> MyData { get; set; }
+
     }
 }
