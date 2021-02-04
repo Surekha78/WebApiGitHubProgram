@@ -1,0 +1,16 @@
+﻿3rd Feb
+____________________
+10th Results
+
+Student Name: xxxxxxxxxxxxxxx
+Status : Pass/Fail
+Greeting : Pass - > Congratulations, Fail -> Better luck
+Board Name : yyyyyyyyyyyyyyyyy
+
+Marks
+Telugu : 20
+Hindi : 30
+English : 50
+
+Total : 1250
+__________________
