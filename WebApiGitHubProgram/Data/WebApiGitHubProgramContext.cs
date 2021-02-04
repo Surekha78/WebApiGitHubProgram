@@ -29,7 +29,6 @@ namespace WebApiGitHubProgram.Data
         public DbSet<Title> Titles { get; set; }
         public DbSet<Student> Students { get; set; }
 
-        public DbSet<WebApiGitHubProgram.Data.MyTable> MyTables { get; set; }
         public object Balutable { get; internal set; }
         public DbSet<WebApiGitHubProgram.Data.MyData> MyData { get; set; }
 
