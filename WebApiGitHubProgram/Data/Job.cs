@@ -12,6 +12,7 @@ namespace WebApiGitHubProgram.Data
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; } // 1, 2, 3 ...
+        [Required]
         public string JobDescription { get; set; }
 
         public ICollection<Employee1> GetEmployee1s { get; set; }

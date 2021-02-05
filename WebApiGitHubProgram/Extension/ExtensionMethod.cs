@@ -16,7 +16,8 @@ namespace WebApiGitHubProgram.Extension
                     (
                         new { id = -1, JobDescription = "HR......" },
                         new { id = -2, JobDescription = "Admin." },
-                        new { id = -3, JobDescription = "Dev." }
+                        new { id = -3, JobDescription = "Dev." },
+                          new { id = -4, JobDescription = "Hr." }
                     );
         }
 
