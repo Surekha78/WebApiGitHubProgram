@@ -10,8 +10,8 @@ using WebApiGitHubProgram.Data;
 namespace WebApiGitHubProgram.Migrations
 {
     [DbContext(typeof(WebApiGitHubProgramContext))]
-    [Migration("20210202052142_Datamigration")]
-    partial class Datamigration
+    [Migration("20210204063147_I")]
+    partial class I
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -71,6 +71,67 @@ namespace WebApiGitHubProgram.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MyTables");
+                });
+
+            modelBuilder.Entity("WebApiGitHubProgram.Data.Student", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("StudetName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TitleID")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("TitleID");
+
+                    b.ToTable("Students");
+                });
+
+            modelBuilder.Entity("WebApiGitHubProgram.Data.Title", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("TitleDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Titles");
+
+                    b.HasData(
+                        new
+                        {
+                            id = -1,
+                            TitleDescription = "Mrs......"
+                        },
+                        new
+                        {
+                            id = -2,
+                            TitleDescription = "Miss."
+                        },
+                        new
+                        {
+                            id = -3,
+                            TitleDescription = "Mr."
+                        });
+                });
+
+            modelBuilder.Entity("WebApiGitHubProgram.Data.Student", b =>
+                {
+                    b.HasOne("WebApiGitHubProgram.Data.Title", "Title")
+                        .WithMany("Student")
+                        .HasForeignKey("TitleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
