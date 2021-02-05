@@ -14,8 +14,10 @@ namespace WebApiGitHubProgram.Data
         {
         }
 
-        public DbSet<WebApiGitHubProgram.Data.MyTable> MyTables { get; set; }
+        public DbSet<MyTable> MyTables { get; set; }
+        public DbSet<Title> Titles { get; set; }
 
-        public DbSet<WebApiGitHubProgram.Data.GitTable> GitTable { get; set; }
+        public DbSet<student> students { get; set; }
+        public object GitTable { get; internal set; }
     }
 }

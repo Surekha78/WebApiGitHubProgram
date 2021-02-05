@@ -12,11 +12,11 @@ namespace WebApiGitHubProgram.Data
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]// Database will generate number by db
                                                              // [DatabaseGenerated(DatabaseGeneratedOption.None)] //Database will not generate
-        public int Id { get; set; }
+        public int studId { get; set; }
         // [StringLength(50)] // [MinLength(3)]
         [Required, StringLength(50), MinLength(3)]
-        public string EmpName { get; set; }
-        public double Salary { get; set; }
+        public string studentName { get; set; }
+        public double fee { get; set; }
         public DateTime? DOB { get; set; }  //suffix ? means it is nullable property
 
     }
