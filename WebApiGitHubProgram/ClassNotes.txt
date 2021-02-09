@@ -6,3 +6,34 @@ var a = new {id = 10, name = "Ramesh", Age = "100"} // c++/c# type of creation
 JSON Object
 {id: 10, name: "Ramesh", Age: "100"} // js type of creation
 
+5th Feb
+
+SQL Vs LINQ Queries (DML Queries)
+
+CRUD - 
+
+C - Insert --> _Context.TableName.Add(Object); // AddRange()
+U - Update --> .Modefied, // _Context.TableName.Update(Object); // UpdateRange()
+D - Delete --> Remove(); // RemoveRange()
+
+R - SELECT but it has many options while you do practice.
+
+Ex:
+Select All --> SELECT * FROM TABLENAME ---> 1. _Context.TABLENAME.ToList(); // AsEnumerable(); AsQuearable(); 2. from t in _Context.TABLENAME select t;
+Select One
+Select Multi
+Select By Condition (WHERE)
+Select By Condition and Order
+Select By Condition and Order Final Select One
+Select By Condition and Order Final Select Multi
+Select With Having Clause
+Select with Group By Clause
+SELCT WITH MUTLI TABLES SUCH AS
+INNER JOIN
+OUTER JOIN
+LEFT JOIN
+RIGHT JOIN
+CRISSCROSS JOIN
+and list goes on...
+
+Please note down, if i miss something here....

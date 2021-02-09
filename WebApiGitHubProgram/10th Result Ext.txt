@@ -1,0 +1,55 @@
+﻿
+This is my personal zoom meeting id, please note this somewhere.
+
+We will use this link, if required to continew beyond 12PM but in rare cases only.
+https://us05web.zoom.us/j/2979235759?pwd=MXJkWFVmRGU4bEdLakpKY25TU2VPdz09
+
+
+-----------Master Data Starts--------
+id ---> PK
+StudentProfiles - Table1
+StudentName - Ramesh
+FatehrName - Ramesh's Father
+DOB - RameshDOB
+PreviousSchoolName - RameshPrevSc
+PayableFee - 10000
+HallTicket (Ex: H1, H2, H3)--> 1. Must generate only for students who paid fee in full. 2. Sorting With <StudentName>
+
+Fees - Table2
+Id - PK
+Sid - FK from <StudentProfile>
+PeePaid
+PaidOn - <DateTime>
+
+Marks - Table3
+HallTicket - mapping Table1
+English - Int
+Hindi - Int
+Maths - Int
+-----------Master Data Ends--------
+-----------------------------------------------------
+-----------Buzz logic starts--------
+
+Tot - English + Hindi + Maths
+Perc - Tot / 3
+Result = Pass/Fail - Must carry with mini marks 35 in each sub i.e English, Hindi, Maths
+Grade - (A, B, C) - Must Pass // A - Perc >= 60, B -  Perc InBetween 50 = 59.99, C - Inbetween 35 to 49.99
+
+===> Taks 1
+I want fetch a student details based hall ticket no.
+
+===> Taks 2
+I want fetch students where fee is not fully paid (10000)
+
+===> Taks 3
+I want fetch students where fee is partially paid (1 to 9999)
+
+===> Taks 4
+I want fetch students where fee is not yet paid at least single paisa (0)
+
+===> Taks 5
+I want fetch students where PreviousSchoolName == given name
+-----------Buzz logic ends--------
+
+
+
