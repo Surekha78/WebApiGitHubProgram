@@ -15,7 +15,8 @@ namespace WebApiGitHubProgram.Data
         }
 
         public DbSet<WebApiGitHubProgram.Data.MyTable> MyTables { get; set; }
+        public DbSet<WebApiGitHubProgram.Data.Marks> Markss { get; set; }
 
-        public DbSet<WebApiGitHubProgram.Data.Balutable> Balutable { get; set; }
+        
     }
 }

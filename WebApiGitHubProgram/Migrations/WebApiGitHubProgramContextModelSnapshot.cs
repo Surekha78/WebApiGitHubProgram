@@ -19,30 +19,38 @@ namespace WebApiGitHubProgram.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("WebApiGitHubProgram.Data.Balutable", b =>
+            modelBuilder.Entity("WebApiGitHubProgram.Data.Marks", b =>
                 {
-                    b.Property<int>("StdId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime?>("DOB")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("Avg")
+                        .HasColumnType("int");
 
-                    b.Property<double>("Fee")
-                        .HasColumnType("float");
+                    b.Property<int>("English")
+                        .HasColumnType("int");
 
-                    b.Property<DateTime?>("JoiningDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("StdName")
+                    b.Property<string>("Grade")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("StdId");
+                    b.Property<int>("Maths")
+                        .HasColumnType("int");
 
-                    b.ToTable("Balutable");
+                    b.Property<int>("Science")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Total")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Markss");
                 });
 
             modelBuilder.Entity("WebApiGitHubProgram.Data.MyTable", b =>
