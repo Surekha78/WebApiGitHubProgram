@@ -27,6 +27,8 @@ namespace WebApiGitHubProgram.Data
         public DbSet<Job> job { get; set; }
         public DbSet<Employee1> GetEmployee1s { get; set; }
 
+        public DbSet<StudResult> studs { get; set; }
+
 
     }
 }

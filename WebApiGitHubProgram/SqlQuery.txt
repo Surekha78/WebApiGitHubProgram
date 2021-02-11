@@ -1,0 +1,121 @@
+﻿Ex:Customer Tbl
+--------------------------------  SQL SELECT Statement -------------------------------------
+____________________________________________________________________________________________
+select All---->						SELECT * FROM Customers;
+___________________________________________________________________________________________
+Select One----->					SELECT Country FROM Customers;
+___________________________________________________________________________________________
+Select Multi--->					SELECT Country,City,Name FROM Customers;
+___________________________________________________________________________________________
+Select By Condition(Where)--->		SELECT * FROM Customers WHERE Country='Mexico';
+___________________________________________________________________________________________
+Select By Condition and Order---->	SELECT * FROM Customers  ORDER BY Country DESC;
+___________________________________________________________________________________________
+Select By Condition and order Final Select One--->SELECT Country FROM Customers ORDER BY Country DESC
+___________________________________________________________________________________________
+Select With Having Clause--->	SELECT COUNT(CustomerID), Country
+								FROM Customers
+								GROUP BY Country
+								HAVING COUNT(CustomerID) > 5;
+___________________________________________________________________________________________
+Select with Groupby Clause---->SELECT COUNT(CustomerID), Country
+								FROM Customers
+								GROUP BY Country;
+___________________________________________________________________________________________
+Select with inner join----->SELECT Orders.OrderID, Customers.CustomerName,
+							Orders.OrderDate
+						   FROM Orders
+						   INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+___________________________________________________________________________________________
+Select with Left join-->SELECT Customers.CustomerName, Orders.OrderID
+						FROM Customers
+						LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+						ORDER BY Customers.CustomerName;
+___________________________________________________________________________________________
+Select with Right join--->SELECT Orders.OrderID, Employees.LastName, Employees.FirstName
+								FROM Orders
+								RIGHT JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
+								ORDER BY Orders.OrderID;
+___________________________________________________________________________________________
+Select with Full join--->SELECT Customers.CustomerName, Orders.OrderID
+						FROM Customers
+						FULL OUTER JOIN Orders ON Customers.CustomerID=Orders.CustomerID
+						ORDER BY Customers.CustomerName;
+
+___________________________________________________________________________________________
+Select with Multi Column--->SELECT ID, NAME, SALARY FROM DemoTbl;
+___________________________________________________________________________________________
+Select with any values that start with "200"-->
+												SELECT * FROM DemoTbl
+												WHERE SALARY LIKE '200%';
+___________________________________________________________________________________________
+Select with any values that have "sh" in any position-->
+														SELECT* FROM DemoTbl
+														WHERE NAME LIKE '%sh%'
+
+___________________________________________________________________________________________
+Select with any values that have "sh" in the second position--->
+																SELECT * FROM DemoTbl
+																WHERE NAME LIKE '_sh%'
+___________________________________________________________________________________________
+Select with any values that end with "sh"--->
+													SELECT * FROM DemoTbl
+													WHERE NAME LIKE '%Sh'
+___________________________________________________________________________________________
+Select with any values that start with 4 and ends with 0--->
+															SELECT  * FROM DemoTbl
+															 WHERE  SALARY LIKE '4%0'
+___________________________________________________________________________________________
+Select Top 3 Record by Condition------------------>SELECT TOP 3 * FROM Customers
+									 WHERE Country='Germany';
+___________________________________________________________________________________________
+Select with only distinct (different) values. ------>SELECT DISTINCT Country FROM Customers;
+______________________________________________________________________________________
+Select with multiple possible values for a column------>		SELECT * FROM Customers
+												               WHERE City IN ('Paris','London');
+___________________________________________________________________________________________
+Select with Between a certain range	----------------->		SELECT * FROM Products
+															WHERE Price BETWEEN 50 AND 60;
+___________________________________________________________________________________________
+
+_____________________________________SQL INSERT INTO Statement ______________________________________________________
+___________________________________________________________________________________________
+ Inserts a new record in the table-------->INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+										VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+___________________________________________________________________________________________
+ Insert data in specific columns------>	INSERT INTO Customers (CustomerName, City, Country)
+										VALUES ('Cardinal', 'Stavanger', 'Norway');
+___________________________________________________________________________________________
+
+___________________________________SQL UPDATE Statement  _________________________________________________
+___________________________________________________________________________________________
+Update existing records in a table----->  UPDATE Customers
+										  SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+										 WHERE CustomerID = 1;
+___________________________________________________________________________________________
+UPDATE Multiple Records By Condition(Where)----->UPDATE Customers
+												SET ContactName='Juan'
+												WHERE Country='Mexico';
+___________________________________________________________________________________________
+
+___________________________________ SQL DELETE Statement______________________________________________________
+___________________________________________________________________________________________
+delete existing records in a table By Condition(Where)------>DELETE FROM Customers 
+															WHERE CustomerName='Alfreds Futterkiste';
+___________________________________________________________________________________________
+delete all rows in a table without deleting the table----->DELETE FROM Customers;
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+___________________________________________________________________________________________
