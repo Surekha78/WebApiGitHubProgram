@@ -9,7 +9,7 @@ using WebApiGitHubProgram.Data;
 
 namespace WebApiGitHubProgram.Controllers
 {
-    [Route("api/[controller]")]
+    // [Route("api/[controller]")]
     [ApiController]
     public class MyTablesController : ControllerBase
     {
@@ -21,6 +21,7 @@ namespace WebApiGitHubProgram.Controllers
         }
 
         // GET: api/MyTables
+        [Route("api/GetMyTable")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MyTable>>> GetMyTable()
         {
@@ -28,6 +29,7 @@ namespace WebApiGitHubProgram.Controllers
         }
 
         // GET: api/MyTables/5
+        [Route("api/GetMyTableByPK")]
         [HttpGet("{id}")]
         public async Task<ActionResult<MyTable>> GetMyTable(int id)
         {
@@ -44,6 +46,7 @@ namespace WebApiGitHubProgram.Controllers
         // PUT: api/MyTables/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        [Route("api/PutMyTable")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMyTable(int id, MyTable myTable)
         {
@@ -76,25 +79,28 @@ namespace WebApiGitHubProgram.Controllers
         // POST: api/MyTables
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        [Route("api/POSTMyTable")]
         [HttpPost]
-        public async Task<ActionResult<MyTable>> PostMyTable(MyTable myTable)
+        public async Task<int> PostMyTable([FromBody] MyTable myTable)
         {
             _context.MyTables.Add(myTable);
-            try
-            {
-                await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
-            }
-            catch (Exception ex)
-            {
+            return myTable.Id;
+        }
 
-                throw;
-            }
+        [Route("api/MyTableMulti")]
+        [HttpPost]
+        public async Task<ActionResult> PostMyTable([FromBody] List<MyTable> myTables)
+        {
+            _context.MyTables.AddRange(myTables);
+            await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMyTable", new { id = myTable.Id }, myTable);
+            return Ok();
         }
 
         // DELETE: api/MyTables/5
+        [Route("api/DeleteMyTable")]
         [HttpDelete("{id}")]
         public async Task<ActionResult<MyTable>> DeleteMyTable(int id)
         {
