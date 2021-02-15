@@ -10,8 +10,8 @@ using WebApiGitHubProgram.Data;
 namespace WebApiGitHubProgram.Migrations
 {
     [DbContext(typeof(WebApiGitHubProgramContext))]
-    [Migration("20210204063147_I")]
-    partial class I
+    [Migration("20210215044425_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
