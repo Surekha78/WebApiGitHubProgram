@@ -25,7 +25,7 @@ namespace LINQPractice.Controllers
             // to get Generated SQL Statement
             var q = _context.OrderTbl.AsQueryable();
             var GeneratedSQL = q.ToQueryString(); // SELECT dbo.[c.Oid], c.CustomerId, c.Amount FROM Customers as c;
-            
+
             // 1. SELECT * FROM Customers;
 
             // Method Query
