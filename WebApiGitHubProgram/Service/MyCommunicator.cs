@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -68,9 +69,24 @@ namespace WebApiGitHubProgram.Service
             }
         }
 
-        public void SendSMS()
+        public string SendSMS()
         {
-            Console.WriteLine("I am from Send SMS");
+            string strUrl = "http://pro.instabulksms.com/API/WebSMS/Http/v1.0a/index.php?username=<UserName>&password=<Password>&sender=<SenderID>&to=<RecipientMobile>&message=<MsgBody>&reqid=1&format={json|text}&route_id=route+id&callback=Any+Callback+URL&unique=0&sendondate=<SendDateTime>";
+            WebRequest request = HttpWebRequest.Create(strUrl);
+            string dataString = null;
+            try
+            {
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                StreamReader readStream = new StreamReader(response.GetResponseStream());
+                dataString = readStream.ReadToEnd();
+                response.Close();
+                readStream.Close();
+            }
+            catch (Exception ex)
+            {
+                dataString = ex.ToString().Length <= 100 ? ex.ToString() : ex.ToString().Remove(100);
+            }
+            return dataString;
         }
     }
 }

@@ -9,6 +9,7 @@ namespace LINQPractice
 {
     public partial class OrderTbl
     {
+        // [PK]
         public int Oid { get; set; }
         public int CustomerId { get; set; }
         public int Amount { get; set; }
