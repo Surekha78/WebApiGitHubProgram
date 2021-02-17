@@ -1,0 +1,17 @@
+﻿// Routes
+Pages			-	/			-	http://localhost:5000/
+
+Pages/Error.cshtml	-	/Error			-	http://localhost:5000/Error
+
+Pages/Privacy.cshtml	-	/Privacy		-	http://localhost:5000/Privacy
+
+
+Pages/MyRoute/Index.cshtml	-	/MyRoute		-	http://localhost:5000/MyRoute/
+
+Pages/MyRoute/MyRouteSubPage.cshtml	-	/MyRoute/MyRouteSubPage		-	http://localhost:5000/MyRoute/MyRouteSubPage
+
+-----------------------------------------------------------------------
+
+
+
+
