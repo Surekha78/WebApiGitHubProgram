@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiGitHubProgram", "WebApiGitHubProgram\WebApiGitHubProgram.csproj", "{13552015-9C2A-4248-B08B-81791ED304D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQPractice", "LINQPractice\LINQPractice.csproj", "{778D4B53-92A9-4222-8343-2D646B01DD2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LINQPractice", "LINQPractice\LINQPractice.csproj", "{778D4B53-92A9-4222-8343-2D646B01DD2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{91591D65-F369-4976-944D-694E10EA27BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{778D4B53-92A9-4222-8343-2D646B01DD2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{778D4B53-92A9-4222-8343-2D646B01DD2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{778D4B53-92A9-4222-8343-2D646B01DD2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91591D65-F369-4976-944D-694E10EA27BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91591D65-F369-4976-944D-694E10EA27BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91591D65-F369-4976-944D-694E10EA27BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91591D65-F369-4976-944D-694E10EA27BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
