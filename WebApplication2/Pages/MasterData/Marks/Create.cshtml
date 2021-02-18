@@ -1,0 +1,48 @@
+﻿@page
+@model WebApplication2.Pages.MasterData.Marks.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Mark</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Mark.StudentProfileid" class="control-label"></label>
+                <select asp-for="Mark.StudentProfileid" class ="form-control" asp-items="ViewBag.StudentProfileid"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mark.English" class="control-label"></label>
+                <input asp-for="Mark.English" class="form-control" />
+                <span asp-validation-for="Mark.English" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mark.Hindi" class="control-label"></label>
+                <input asp-for="Mark.Hindi" class="form-control" />
+                <span asp-validation-for="Mark.Hindi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mark.Maths" class="control-label"></label>
+                <input asp-for="Mark.Maths" class="form-control" />
+                <span asp-validation-for="Mark.Maths" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

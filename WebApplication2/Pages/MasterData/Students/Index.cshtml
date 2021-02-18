@@ -1,0 +1,66 @@
+﻿@page
+@model WebApplication2.Pages.MasterData.Students.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentProfile[0].StudentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentProfile[0].FatehrName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentProfile[0].DOB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentProfile[0].PreviousSchoolName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentProfile[0].PayableFee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentProfile[0].HallTicket)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.StudentProfile) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FatehrName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PreviousSchoolName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PayableFee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HallTicket)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
