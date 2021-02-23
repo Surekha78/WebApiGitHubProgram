@@ -56,6 +56,7 @@ namespace WebApplication2.Pages
 
         public IActionResult OnPostGenerateHallTickets()
         {
+            // var SList = _context.StudentProfiles.Where(w => w.HallTicket == null).ToList();
             var SList = _context.StudentProfiles.ToList();
 
             var FeePaidSum = _context.Fees.GroupBy(g => g.StudentProfileid)
@@ -84,14 +85,13 @@ namespace WebApplication2.Pages
             int i = 1;
             SortedSList.ForEach(s =>
             {
-                s.HallTicket = $"H{i}";
+                s.HallTicket = $"H{i}"; // "H" + i // Result H1, H2, H3
                 i++;
             });
 
             _context.SaveChanges();
 
-            return RedirectToPage("/");
-
+             return RedirectToPage("/MasterData/Students/Index");
         }
     }
 }

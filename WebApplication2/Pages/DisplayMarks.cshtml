@@ -1,0 +1,30 @@
+﻿@page
+@model WebApplication2.Pages.DisplayMarksModel
+@{
+    var tdv = TempData["HallTicket"];
+    TempData.Keep("HallTicket");
+    var tdv1 = TempData["HallTicket"];
+    TempData.Remove("HallTicket");
+    /*TempData["HallTicket"].Keep();
+    TempData["HallTicket"].Remove();*/
+}
+
+@*<h1>@TempData["HallTicket"]</h1>
+
+    <h1>@tdv</h1>*@
+
+@if (@Model.error != null)
+{
+    <h1>@Model.error</h1>
+
+}
+
+@if (@Model.error == null)
+{
+    <h1 class="clearfix">@Model.vMark.StudentName</h1>
+    <p class="text-primary">@Model.vMark.English</p>
+    <p class="text-secondary">@Model.vMark.Hindi</p>
+    <p class="text-warning">@Model.vMark.Maths</p>
+    <p class="text-danger clearfix">@Model.vMark.Total</p>
+}
+
