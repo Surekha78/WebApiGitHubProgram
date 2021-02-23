@@ -1,0 +1,55 @@
+﻿@page
+@model WebApplication2.Pages.MasterData.Students.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>StudentProfile</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentProfile.StudentName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StudentProfile.StudentName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentProfile.FatehrName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StudentProfile.FatehrName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentProfile.DOB)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StudentProfile.DOB)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentProfile.PreviousSchoolName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StudentProfile.PreviousSchoolName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentProfile.PayableFee)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StudentProfile.PayableFee)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentProfile.HallTicket)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StudentProfile.HallTicket)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.StudentProfile.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

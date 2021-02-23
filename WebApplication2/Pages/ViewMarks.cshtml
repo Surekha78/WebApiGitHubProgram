@@ -1,0 +1,20 @@
+﻿@page
+@model WebApplication2.Pages.ViewMarksModel
+@{
+}
+
+<form method="post">
+
+<h1>Please Enter Hall Ticket</h1>
+
+<input asp-for="@Model.HallTicket"/>
+
+<button type="submit">Get Results</button>
+
+</form>
+
+<hr />
+
+<div class="container">
+    <p>@Model.ErrorMsg</p>
+</div>

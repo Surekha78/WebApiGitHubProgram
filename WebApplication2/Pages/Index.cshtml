@@ -1,0 +1,76 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <a class="brn btn-primary m-3" href="/MasterData/Students">Students</a>
+        <a class="brn btn-success m-3" href="/MasterData/Fees">Fees</a>
+        <a class="brn btn-warning m-3" href="/MasterData/Marks">Marks</a>
+        <a class="brn btn-danger m-3" href="/MyBuzz">My Buzz</a>
+        <form method="post">
+
+        <button class="btn btn-danger" asp-page-handler="GenerateHallTickets" type="submit">Generate Hall Tickets</button>
+        </form>
+    </div>
+</div>
+
+@*<div class="container">
+        <div class="row">
+            <div class="col-4 offset-4">
+                <h1>SomeName Property's value: @Model.SomeName</h1>
+                <p>SomeName Property's value: @Model.SomeInt</p>
+            </div>
+        </div>
+    </div>*@
+
+<div class="container">
+    <form method="post">
+        <div class="row">
+            <div class="col-6">
+                <input type="number" asp-for="@Model.SomeInt1" placeholder="Enter value for SomeInt" />
+                <input type="number" asp-for="@Model.SomeInt2" placeholder="Enter value for SomeInt2" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <button class="btn btn-primary" asp-page-handler="Int1" type="submit">Submit-1</button>
+                <button class="btn btn-success" asp-page-handler="Int2" type="submit">Submit-2</button>
+                <button class="btn btn-danger" asp-page-handler="Int3" asp-route-SomeInt3="25" type="submit">Submit-3</button>
+            </div>
+        </div>
+    </form>
+
+    <hr />
+
+    <h3>@Model.SomeName</h3>
+
+</div>
+
+<hr />
+
+@*<div class="container">
+    <div class="row">
+        <div class="col-4 offset-4">
+            @if (@Model.SomeInt == 10)
+            {
+                <h1>SomeName Property's value: @Model.SomeName</h1>
+            }
+            else
+            {
+                <h1>SomeName Property's value not printable because SomeInt value is not equal to 10</h1>
+            }
+        </div>
+    </div>
+</div>*@
+
+
+
+
