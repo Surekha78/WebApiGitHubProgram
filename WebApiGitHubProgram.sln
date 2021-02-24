@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LINQPractice", "LINQPractic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{91591D65-F369-4976-944D-694E10EA27BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{34DCDB96-B85D-49C1-BFAD-9ACF713975AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{34DCDB96-B85D-49C1-BFAD-9ACF713975AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
