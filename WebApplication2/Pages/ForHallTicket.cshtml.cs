@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using WebApplication2.Models;
 
 namespace WebApplication2.Pages
 {
@@ -15,12 +16,6 @@ namespace WebApplication2.Pages
         //TempData["Title"] = "Home page";
         [BindProperty]
         public string HallTicket { get; set; }
-
-        public class MyClass
-        {
-            public int id { get; set; }
-            public string name { get; set; }
-        }
 
         public MyClass myClass = new MyClass();
 
