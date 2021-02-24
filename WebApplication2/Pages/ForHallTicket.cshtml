@@ -4,6 +4,8 @@
     ViewData["VDProperty1"] = "VDProperty Value1";
     ViewBag.VBProperty = "VB";
     ViewBag.VBProperty1 = "VB1";
+
+    var vdp = ViewData["VDProperty"] as MyClass;
 }
 
 @*<h1>@ViewData["VDProperty"]</h1>
@@ -18,6 +20,11 @@
 
 <hr />
 <h1>@TempData["TDProperty"]</h1>*@
+
+<h1>
+    @vdp.name
+</h1>
+
 
 <form method="post">
     <input asp-for="@Model.HallTicket" placeholder="Enter hall Ticket. Ex: H1" />

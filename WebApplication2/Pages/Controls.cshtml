@@ -1,0 +1,58 @@
+﻿@page
+@model WebApplication2.Pages.ControlsModel
+@{
+
+    @functions{
+        public int Add2Vals(int a, int b)
+        {
+            return a + b;
+        }
+
+        public object DisplayName()
+        {
+            <h4>My Name Goes Here...</h4>
+            return null;
+        }
+
+        public object DisplayGivenName(string name)
+        {
+            <h4>My Name @name Goes Here...</h4>
+            return null;
+        }
+    }
+
+}
+
+<h1>Functions Example</h1>
+
+<p>@Add2Vals(2, 2)</p>
+
+<h1>4 + 4 = @Add2Vals(4, 4)</h1>
+
+<br />
+<hr />
+
+<span>@DisplayName()</span>
+
+@DisplayGivenName("Ramesh")
+@DisplayGivenName("Suresh")
+
+<br />
+<hr />
+
+<h1>Our Controls</h1>
+
+@Html.TextBox("name");
+@Html.TextBoxFor(m => m.name);
+<input Class="form-control" type="text" asp-for="@Model.name" />
+
+
+@Html.CheckBox("isChecked");
+@Html.CheckBoxFor(m => m.isChecked);
+<input type="checkbox" asp-for="@Model.isChecked" />
+
+
+<br />
+<select asp-for="@Model.SelectedName" multiple asp-items="@Model.MyDDL"  class="form-control">
+    <option value=null>--Please Select User Name</option>
+</select>
