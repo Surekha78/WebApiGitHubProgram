@@ -1,0 +1,21 @@
+﻿@page "/MyCompo"
+
+<h3>MyCompo</h3>
+
+<h3>My Name is: @myName, with id: @id</h3>
+
+<button @onclick="MyMethod">Click to me change name</button>
+
+
+@code {
+
+    public int id = 10;
+    public string myName = "Ramesh";
+
+    public void MyMethod()
+    {
+        id = 25;
+        myName = "Suresh";
+    }
+
+}
