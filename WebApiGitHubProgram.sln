@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiGitHubProgram", "WebApiGitHubProgram\WebApiGitHubProgram.csproj", "{13552015-9C2A-4248-B08B-81791ED304D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiGitHubProgram", "WebApiGitHubProgram\WebApiGitHubProgram.csproj", "{13552015-9C2A-4248-B08B-81791ED304D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqPractiseProject", "LinqPractiseProject\LinqPractiseProject.csproj", "{5108CEBD-88A5-432D-A96F-444E72B0DA0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{13552015-9C2A-4248-B08B-81791ED304D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13552015-9C2A-4248-B08B-81791ED304D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13552015-9C2A-4248-B08B-81791ED304D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5108CEBD-88A5-432D-A96F-444E72B0DA0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5108CEBD-88A5-432D-A96F-444E72B0DA0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5108CEBD-88A5-432D-A96F-444E72B0DA0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5108CEBD-88A5-432D-A96F-444E72B0DA0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
